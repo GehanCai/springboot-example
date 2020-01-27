@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/springboot_example?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&useTimezone=true&serverTimezone=Asia/Shanghai
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: r00t!23
+
+app:
+  jwt:
+    authorised-urls: /**
+    expire: 604800 # 7天:604800
+    secret: 123!@#
+    random-key-length: 6
+    rsa-private-key: MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAIaQygIQPrl5Wz8PVfWAvvGrYSFACS2hqT0AndlDedB0elLWVao2W1qZorrJDQMiCxdhvuNU3EtrQYGBQ0ZV4TzGJl6jeNSC8eTCp6r74gCWRmdAiRJpQeg1rZYHdHg3E9GUHxj7LMKWyQGRpoou/kQGuD6jY+1dxSKxkPT+dubBAgMBAAECgYBX2whIuJp7NcRhM34Hv3rrBd1wfAKCDF4WOeTVCLzrYGDM3KspajvStyQLl2Arf3qGVYbvnWQGyYwHJYHq1f8rX+KFjKe3zUAgrttEq2L/JyfRLVkK1Xt3BJQf+ZnUktGVZQLV81e7uO5byUMPajy9uP1M75mHul/8OWMD9O8QAQJBAMSBxdVx0WZVgIaxjU5q14T19mXMKz94WMeWICFCagKsjbkDC5mlP5hRyZrwP34Bx6SmpkqdQfaUWie8L0Nzf2ECQQCvTkQK81Zdfaa/Rri3frUtIRn5eifcL6zFNYQIXAsEkw8qic90vJMMYbMSaIJHCeNT9GkZiHl1KyTP0Ay8pYNhAkAIBIt/4/75P+/YjxIG6xEUGb0N9kClfFGTAysYcE9HAKdfryIgCMAJhPzG15qfl47/xtTuInB4kSEEkgcTp3jBAkBmOtP/NsxklMPKw6kwiJmLCcSl8ZCRHNQ55O1sGpDqSAAOJHNwdg+ips7Qq1Vdq+x/pwYrN6TsqQ48ie0DjdnBAkEAnTqcuA0ZJxEmO6tX1uMvBkklYJSOBX1WScEJGlqd++sbA4h4amgPCOdXPH7bAIgu/JuSfhKpO5+pKb1S8aC8+g==
+    rsa-public-key: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCGkMoCED65eVs/D1X1gL7xq2EhQAktoak9AJ3ZQ3nQdHpS1lWqNltamaK6yQ0DIgsXYb7jVNxLa0GBgUNGVeE8xiZeo3jUgvHkwqeq++IAlkZnQIkSaUHoNa2WB3R4NxPRlB8Y+yzClskBkaaKLv5EBrg+o2PtXcUisZD0/nbmwQIDAQAB
+    header-key: Authorization
+    header-prefix: Bearer
+    auth-attr: token
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.godling.springboot.mapper.SysUserRoleMapper">
+
+	<select id="listByUserId" resultType="com.godling.springboot.domain.entity.SysRole">
+		SELECT sr.`id`, sr.`name`, sr.`code`
+		FROM sys_user_role AS sur
+				 LEFT JOIN sys_role AS sr ON sr.id = sur.role_id
+		WHERE sur.`user_id` = #{userId}
+	</select>
+
+</mapper>
